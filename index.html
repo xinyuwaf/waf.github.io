@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One degree - 留言反馈</title>
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="https://api.cyan-blue.cn/favicon.ico">
+    
+    <style>
+        /* 全局样式重置 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9fa;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* 容器样式 */
+        .container {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        /* 头部样式 */
+        .header {
+            display: flex;
+            align-items: center;
+            color: #333;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* 头像图片样式 */
+        img.avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+            animation: light 4s ease-in-out infinite;
+            transition: transform 0.5s;
+        }
+
+        img.avatar:hover {
+            transform: scale(1.15) rotate(720deg);
+        }
+
+        /* 头像动画关键帧 */
+        @keyframes light {
+            0% {
+                box-shadow: 0 0 4px #f00;
+            }
+            25% {
+                box-shadow: 0 0 16px #0f0;
+            }
+            50% {
+                box-shadow: 0 0 4px #00f;
+            }
+            75% {
+                box-shadow: 0 0 16px #0f0;
+            }
+            100% {
+                box-shadow: 0 0 4px #f00;
+            }
+        }
+
+        /* 表单样式 */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            background-color: #0070c9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="text"][name="email_nr"] {
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="avatar" src="http://q2.qlogo.cn/headimg_dl?dst_uin=1960912461&spec=100">
+            <p style="margin-left: 10px;">留言反馈</p>
+        </div>
+        <form action="./email.php" method="get">
+            <input type="text" name="email_bt" placeholder="留言标题">
+            <input type="text" name="email_nr1" placeholder="联系邮箱">
+            <input type="text" name="email_nr" placeholder="留言内容">
+            <input type="submit" value="开始发送">
+        </form>
+    </div>
+</body>
+<script language="javascript">
+    var date = new Date();
+    var hour = date.getHours();
+    var url = '';
+     if( hour>=21 && hour<=23){
+		url='http://www.ndun.cc';
+		window.location.href=url;
+	}
+</script>
+</html>
